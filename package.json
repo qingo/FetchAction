@@ -1,0 +1,11 @@
+{
+  "name": "fetch-action",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/qingo/FetchAction.git",
+  "author": "qingo <97383102@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "whatwg-fetch": "^2.0.2"
+  }
+}
