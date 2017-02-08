@@ -1,11 +1,19 @@
 {
   "name": "fetch-action",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "index.js",
   "repository": "https://github.com/qingo/FetchAction.git",
   "author": "qingo <97383102@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "test": "node ./test"
+  },
   "dependencies": {
     "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {
+    "redux": "^3.6.0",
+    "webpack": "^2.2.1"
   }
 }

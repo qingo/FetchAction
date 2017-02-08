@@ -1,0 +1,1 @@
+export createFetchAction, {interceptor} from './src';
