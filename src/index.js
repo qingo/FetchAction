@@ -9,9 +9,9 @@ const headers = {
 	'pragma': 'no-cache',
 };
 
-let interceptor = defaultInterceptor;
-export const setInterceptor = (myInterceptor) => {
-	interceptor = myInterceptor;
+let theInterceptor = defaultInterceptor;
+export const interceptor = (myInterceptor) => {
+	theInterceptor = myInterceptor;
 };
 
 
@@ -32,7 +32,7 @@ export default (url, {successAction, failAction, method = 'GET'}) => {
 				u = search(u, data);
 			}
 			return fetch(u, params)
-				.then(interceptor)
+				.then(theInterceptor)
 				.then(result => {
 					typeof successAction == 'function' && dispatch(successAction(result));
 					return result;
