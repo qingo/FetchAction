@@ -120,7 +120,7 @@ interceptor(myInterceptor);
 
 | config name | 配置参数名称 | 描述 | 备注|
 |------:|-------:|-------:| -------:|
-| url|  路径 | AJAX 请求的路径| restful api 的url中参数配置参考 [pathname](# Use restful api with pathname) 
+| url|  路径 | AJAX 请求的路径| restful api 的url中参数配置参考 [pathname](https://github.com/qingo/FetchAction#use-restful-api-with-pathname) 
 |{successAction}| 请求成功操作 | 
 |{failAction}| 请求成功操作 | 
 |{method}| 请求方式 | 
