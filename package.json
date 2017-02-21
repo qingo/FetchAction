@@ -1,10 +1,14 @@
 {
   "name": "fetch-action",
-  "version": "0.1.2",
-  "main": "index.js",
+  "version": "0.1.4",
+  "main": "dist/index.js",
   "repository": "https://github.com/qingo/FetchAction.git",
   "author": "qingo <97383102@qq.com>",
   "license": "MIT",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "webpack",
     "test": "node ./test"
