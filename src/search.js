@@ -8,4 +8,5 @@ export const search = (url, data) => {
 			url = `${url}?${searchParams}`;
 		}
 	}
+	return url;
 };

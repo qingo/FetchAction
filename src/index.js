@@ -4,9 +4,7 @@ import {search} from './search';
 import {pathname} from './pathname';
 
 const headers = {
-	'Content-Type': 'application/json',
-	'cache-control': 'no-cache',
-	'pragma': 'no-cache',
+	'Content-Type': 'application/json'
 };
 
 let theInterceptor = defaultInterceptor;
