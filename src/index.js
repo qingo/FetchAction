@@ -13,7 +13,7 @@ export const interceptor = (myInterceptor) => {
 };
 
 
-export default (url, {successAction, failAction, method = 'GET'}) => {
+export default (url, [successAction, failAction], method = 'GET') => {
 	method = method.toUpperCase();
 	return (data = {}, pathnames = {}) => {
 		data = Object.assign({}, data);
