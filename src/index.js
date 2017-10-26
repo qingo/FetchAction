@@ -4,7 +4,9 @@ import {search} from './search';
 import {pathname} from './pathname';
 
 const headers = {
-	'Content-Type': 'application/json'
+	'Content-Type': 'application/json',
+	'pragma': 'no-cache',
+	'cache-control': 'no-cache'
 };
 
 let theInterceptor = defaultInterceptor;
@@ -13,10 +15,16 @@ export const interceptor = (myInterceptor) => {
 };
 
 
-export default (url, [successAction, failAction], method = 'GET') => {
+export default (url, actions, method = 'GET') => {
+	let successAction, failAction;
+	if (!Array.isArray(actions)) {
+		method = actions || 'GET';
+	} else {
+		[successAction, failAction] = actions;
+	}
+
 	method = method.toUpperCase();
-	return (data = {}, pathnames = {}) => {
-		data = Object.assign({}, data);
+	return (pathnames = {}, data = {}) => {
 		return dispatch => {
 			const params = {
 				headers: headers,
@@ -24,7 +32,8 @@ export default (url, [successAction, failAction], method = 'GET') => {
 			};
 
 			let u = pathname(url, pathnames);
-			if ((method === 'POST' || method === 'PATCH' || method === 'UPDATE') && Object.keys(data).length !== 0) {
+			if ((method === 'POST' || method === 'PATCH' || method === 'UPDATE' || method === 'PUT' || method === 'DELETE')
+				&& Object.keys(data).length !== 0) {
 				params.body = JSON.stringify(data)
 			} else if (method === 'GET') {
 				u = search(u, data);
